@@ -1,0 +1,21 @@
+﻿@page
+@model BachHoaXanh.Web.Pages.BillDetails.IndexModel
+@using Microsoft.Extensions.Localization
+@using BachHoaXanh.Localization
+@inject IStringLocalizer<BachHoaXanhResource> L
+@section scripts
+{
+    <abp-script src="/Pages/BillDetails/Index.js" />
+}
+<abp-card>
+     <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["BillDtail"]</abp-card-title>
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BillDetailTable"></abp-table>
+    </abp-card-body>
+</abp-card>

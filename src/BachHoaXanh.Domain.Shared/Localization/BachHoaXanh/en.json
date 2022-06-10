@@ -1,0 +1,31 @@
+{
+  "culture": "en",
+  "texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Menu:Customers": "Customer",
+    "Menu:Suppliers": "Supplier",
+    "Menu:Products": "Product",
+    "Menu:Bill": "Bill",
+    "Permission:BachHoaXanh": "Bach Hoa Xanh",
+    "Permission:Customers": "Customers Manager",
+    "Permission:Customers.Create": "Creating new customers",
+    "Permission:Customers.Edit": "Editing the customers",
+    "Permission:Customers.Delete": "Delete the customers",
+    "Permission:Suppliers": "Suppliers Manager",
+    "Permission:Suppliers.Create": "Creating new suppliers",
+    "Permission:Suppliers.Edit": "Editing the suppliers",
+    "Permission:Suppliers.Delete": "Delete the suppliers",
+    "Permission:Products": "Products Manager",
+    "Permission:Products.Create": "Creating new products",
+    "Permission:Products.Edit": "Editing the products",
+    "Permission:Products.Delete": "Delete the products",
+    "Permission:Bills": "Bill Manager",
+    "Permission:Bills.Create": "Creating new bill",
+    "Permission:Bills.Edit": "Editing the bills",
+    "Permission:Bills.Delete": "Delete the bills",
+    "Permission:Bills.Excel": "Export Excel",
+    "Menu:BillDetail" :  "BillDetail"
+  }
+}

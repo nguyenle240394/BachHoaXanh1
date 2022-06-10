@@ -1,0 +1,41 @@
+﻿@page
+@model BachHoaXanh.Web.Pages.Bills.IndexModel
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.Localization
+@using BachHoaXanh.Localization
+@using BachHoaXanh.Permissions
+@inject IStringLocalizer<BachHoaXanhResource> L
+@inject IAuthorizationService AuthorizationService
+@section scripts
+{
+    <abp-script src="/Pages/Bills/Index.js" />
+}
+<abp-card>
+     <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Bill"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                @if (await AuthorizationService.IsGrantedAsync(BachHoaXanhPermissions.Bills.Create))
+                {
+                <abp-button id="NewBillButton"
+                            text="@L["NewBill"].Value"
+                            icon="plus"
+                            button-type="Primary"
+                            onclick="location.href='@Url.Action("CreateModal","Bills")'"/>
+                }
+                @*<a class="nav-link text-dark" asp-area="" asp-page="/Bills/ExcelModal">Export to Excel</a>*@
+               @* @if (await AuthorizationService.IsGrantedAsync(BachHoaXanhPermissions.Bills.Excel))
+                {
+                    <form method="get" >
+                        <input type="submit" value="Export" asp-page="/Bills/ExcelModal"/>
+                    </form>
+                }*@
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BillTable"></abp-table>
+    </abp-card-body>
+</abp-card>

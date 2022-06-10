@@ -1,0 +1,64 @@
+﻿@page
+@model BachHoaXanh.Web.Pages.Bills.CreateModalModel
+@using BachHoaXanh
+@using Microsoft.Extensions.Localization
+@using BachHoaXanh.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@inject IStringLocalizer<BachHoaXanhResource> L
+@section scripts
+    {
+    <abp-script src="/Pages/Bills/CreateModal.js" />
+}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">"
+    @*<abp-dynamic-form abp-model="Bill" asp-page="/Bills/CreateModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewBill"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>]
+</abp-dynamic-form>*@
+    @*<form method="post" asp-page="/Bills/CreateModal">*@
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <abp-card>
+                        <abp-card-header>
+                            <abp-row>
+                                <abp-column size-md="_6">
+                                    <abp-card-title>@L["New Bill"]</abp-card-title>
+                                </abp-column>
+                            </abp-row>
+                        </abp-card-header>
+                        <abp-card-body>
+                            <abp-select asp-for="Bill.CustomerId" asp-items="Model.Customers" />
+                            <table class="mb-3" id="td">
+                                <tr>
+                                    <th class="col-1">Prodcut</th>
+                                    <th class="col-1">Unit Price</th>
+                                    <th class="col-1">Quantity</th>
+                                    <th class="col-1">Price</th>
+                                    <th class="col-1"></th>
+                                </tr>
+                        </table>
+                    </abp-card-body>
+                </abp-card>
+            </div>
+            <div class="col">
+                <abp-card>
+                    <abp-card-header>
+                        <abp-row>
+                            <abp-column size-md="_6">
+                                <abp-card-title>@L["List Product"]</abp-card-title>
+                            </abp-column>
+                        </abp-row>
+                    </abp-card-header>
+                    <abp-card-body>
+                        <abp-table striped-rows="true" id="listProduct"></abp-table>
+                    </abp-card-body>
+                </abp-card>
+            </div>
+        </div>
+    </div>
+@*</form>*@

@@ -1,0 +1,18 @@
+﻿@page
+@model BachHoaXanh.Web.Pages.Suppliers.CreataeModalModel
+@using Microsoft.Extensions.Localization
+@using BachHoaXanh.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@inject IStringLocalizer<BachHoaXanhResource> L
+@{
+    Layout = null;
+}
+<abp-dynamic-form abp-model="Supplier" asp-page="/Suppliers/CreataeModal">
+    <abp-modal>
+        <abp-modal-header title="@L["NewSupplier"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>
