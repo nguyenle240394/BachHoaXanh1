@@ -55,17 +55,20 @@ $(document).on('click', '.btn-add', function () {
                             <i class="bi bi-x-circle-fill" id="${res.id}" onclick="Delete(this.id)"></i>
                         </td>
                     </tr>`
-
+        /*kiểm tra id đã có trong arry chưa*/
         if (!arrayCard.includes(id)) {
+            /*thêm giá trị id vào arry*/
             arrayCard.push(id);
             $('#td').append(html);
         } else {
+            /*chuyển giá trị value thành int*/
             let value = parseInt($("#quantity" + id).val()) + 1;
             $("#quantity" + id).val(value);
         }
     })        
 })
 function Quantity(type, id) {
+    /*lấy giá trị ô input tại id của input*/
     let value = $("#quantity" + id).val();
     if (type === 'up') {
         value++;
@@ -76,6 +79,7 @@ function Quantity(type, id) {
     }
     if (value < 0) {
         value = 0;
+        /*thông báo chuyển đến hàm xóa row*/
         abp.message.confirm('Are you sure to delete the "admin" role?')
             .then(function (confirmed) {
                 if (confirmed) {
@@ -83,8 +87,8 @@ function Quantity(type, id) {
                 }
             });
     }
+    /*gán giá trị cho ô input*/
     $("#quantity" + id).val(value)
-    $('#h3').text(val)
 }
 
 /*xóa dòng*/
@@ -95,6 +99,3 @@ function Delete(id) {
     /*xóa phần tử tại vị trí và xóa 1 phần tử*/
     arrayCard.splice(index, 1);
 }
-
-
-
