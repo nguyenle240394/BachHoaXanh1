@@ -9,7 +9,7 @@
     {
     <abp-script src="/Pages/Bills/CreateModal.js" />
 }
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     @*<abp-dynamic-form abp-model="Bill" asp-page="/Bills/CreateModal">
     <abp-modal>
         <abp-modal-header title="@L["NewBill"].Value"></abp-modal-header>
@@ -20,17 +20,18 @@
     </abp-modal>]
 </abp-dynamic-form>*@
     @*<form method="post" asp-page="/Bills/CreateModal">*@
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <abp-card>
-                        <abp-card-header>
-                            <abp-row>
-                                <abp-column size-md="_6">
-                                    <abp-card-title>@L["New Bill"]</abp-card-title>
-                                </abp-column>
-                            </abp-row>
-                        </abp-card-header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <abp-card>
+                    <abp-card-header>
+                        <abp-row>
+                            <abp-column size-md="_6">
+                                <abp-card-title>@L["New Bill"]</abp-card-title>
+                            </abp-column>
+                        </abp-row>
+                    </abp-card-header>
+                    <form method="post" asp-page="/Bills/CreateModal" enctype="multipart/form-data">
                         <abp-card-body>
                             <abp-select asp-for="Bill.CustomerId" asp-items="Model.Customers" />
                             <table class="mb-3" id="td">
@@ -41,8 +42,15 @@
                                     <th class="col-1">Price</th>
                                     <th class="col-1"></th>
                                 </tr>
-                        </table>
-                    </abp-card-body>
+                            </table>
+                            <abp-card-footer id="Sumh2">
+                                <h2 id="rsSum">Sum</h2>
+                            </abp-card-footer>
+                        </abp-card-body>
+                        <abp-card-footer id="save" style="text-align:right">
+                            <button data-busy-text="Đang lưu..." class="btn btn-primary bkgrnd-cyan save-details" type="submit" name="save-details" style="text-align:left">@L["Save"]</button>
+                        </abp-card-footer>
+                    </form>
                 </abp-card>
             </div>
             <div class="col">
@@ -61,4 +69,4 @@
             </div>
         </div>
     </div>
-@*</form>*@
+    @*</form>*@
